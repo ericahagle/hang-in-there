@@ -134,7 +134,7 @@ savedPostersGrid.addEventListener('dblclick', deleteSavedPoster);
 // Outputs a randomized index in the given array
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
-};
+}
 
 // Create a poster using randomized images, titles, and quotes, then return a poster in the currentPoster variable
 function createPoster(imageURL, title, quote) {
@@ -145,13 +145,13 @@ function createPoster(imageURL, title, quote) {
   var quoteIndex = getRandomIndex(quote);
   var newQuote = quote[quoteIndex];
   currentPoster = {
-      id: Date.now(), 
-      imageURL: newImage, 
-      title: newTitle, 
-      quote: newQuote 
-    }
+      id: Date.now(),
+      imageURL: newImage,
+      title: newTitle,
+      quote: newQuote
+    };
   return currentPoster;
-};
+}
 
 // Change poster to another random poster
 function changePoster() {
@@ -159,14 +159,14 @@ function changePoster() {
   imageOnPoster.src = currentPoster.imageURL;
   titleOnPoster.innerText = currentPoster.title;
   quoteOnPoster.innerText = currentPoster.quote;
-};
+}
 
 // Switch user to 'Make Your Own Poster' view
 function makeYourOwnPosterView() {
   posterFormSection.classList.remove('hidden');
   mainPosterSection.classList.add('hidden');
   savedPostersSection.classList.add('hidden');
-};
+}
 
 // Switch user to 'Show Saved Posters' view
 function showSavedPostersView() {
@@ -183,31 +183,31 @@ function showSavedPostersView() {
     posterElement.innerHTML = `<img src="${poster.imageURL}" alt="Saved Poster"><h2>${poster.title}</h2><h4>${poster.quote}</h4>`;
     savedPostersGrid.appendChild(posterElement);
   }
-};
+}
 
 // Switch user to main view
 function showMainPosterView() {
   mainPosterSection.classList.remove('hidden');
   savedPostersSection.classList.add('hidden');
   posterFormSection.classList.add('hidden');
-};
+}
 
 // Allow a user to create their own poster
-function createYourOwnPoster(event) { 
+function createYourOwnPoster(event) {
   images.push(imageUrlInput.value);
   titles.push(motivationalTitleInput.value);
   quotes.push(motivationalQuoteInput.value);
   var userCurrentPoster = {
-    id: Date.now(), 
+    id: Date.now(),
     imageURL: imageOnPoster.src = imageUrlInput.value,
     title: titleOnPoster.innerText = motivationalTitleInput.value,
     quote: quoteOnPoster.innerText = motivationalQuoteInput.value
   };
-  currentPoster = userCurrentPoster; 
+  currentPoster = userCurrentPoster;
   event.preventDefault();
   showMainPosterView();
   return currentPoster;
-};
+}
 
 // Save posters to saved poster view
 function saveThisPoster() {
@@ -223,4 +223,3 @@ function deleteSavedPoster(event) {
     event.target.remove();
   }
 }
-
