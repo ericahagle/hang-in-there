@@ -127,9 +127,9 @@ nvmTakeMeBackButton.addEventListener('click', showMainPosterView);
 backToMainButton.addEventListener('click', showMainPosterView);
 showMyPosterButton.addEventListener('click', createYourOwnPoster);
 saveThisPosterButton.addEventListener('click', saveThisPoster);
+savedPostersGrid.addEventListener('dblclick', deleteSavedPoster);
 
 // functions and event handlers go here 👇
-// (we've provided two to get you started)!
 
 // Outputs a randomized index in the given array
 function getRandomIndex(array) {
@@ -153,7 +153,7 @@ function createPoster(imageURL, title, quote) {
   return currentPoster;
 };
 
-// Invoke the function to create a poster and then reassign each query selector variable to have the values from the currentPoster variable
+// Change poster to another random poster
 function changePoster() {
   createPoster(images, titles, quotes);
   imageOnPoster.src = currentPoster.imageURL;
@@ -204,12 +204,8 @@ function createYourOwnPoster(event) {
     quote: quoteOnPoster.innerText = motivationalQuoteInput.value
   };
   currentPoster = userCurrentPoster; 
-  console.log(imageOnPoster);
-  console.log(titleOnPoster);
-  console.log(quoteOnPoster);
   event.preventDefault();
   showMainPosterView();
-  console.log(currentPoster);
   return currentPoster;
 };
 
@@ -217,7 +213,14 @@ function createYourOwnPoster(event) {
 function saveThisPoster() {
   if (!savedPosters.includes(currentPoster)) {
     savedPosters.push(currentPoster);
-    console.log(savedPosters);
   }
   return savedPosters;
-};
+}
+
+// Delete a saved poster when double clicked
+function deleteSavedPoster(event) {
+  if (event.target.tagName === 'DIV') {
+    event.target.remove();
+  }
+}
+
