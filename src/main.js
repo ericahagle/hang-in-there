@@ -182,7 +182,7 @@ function showSavedPostersView() {
     posterElement.classList.add('mini-poster');
     posterElement.innerHTML = `<img src="${poster.imageURL}" alt="Saved Poster"><h2>${poster.title}</h2><h4>${poster.quote}</h4>`;
     savedPostersGrid.appendChild(posterElement);
-  }
+  };
 }
 
 // Switch user to main view
@@ -213,7 +213,7 @@ function createYourOwnPoster(event) {
 function saveThisPoster() {
   if (!savedPosters.includes(currentPoster)) {
     savedPosters.push(currentPoster);
-  }
+  };
   return savedPosters;
 }
 
@@ -221,5 +221,5 @@ function saveThisPoster() {
 function deleteSavedPoster(event) {
   if (event.target.tagName === 'DIV') {
     event.target.remove();
-  }
+  };
 }
