@@ -8,9 +8,14 @@ We built a webpage that loads a random poster that contains: an image, a quote, 
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 To get the app cloned down and running, you need to copy the link from github in the code drop down menu (SSH) and in your terminal, git clone and paste the link. When you are in the correct directoy, the directory you just cloned down, you can open VS code by typing code . and within your terminal, you can use open index.html to view the application. 
 
+The app can also be accessed live at: https://ericahagle.github.io/hang-in-there/
+
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
-![Alt text] ![Alt text](<Screenshot 2023-09-01 at 3.21.36 PM.png>)
+
+<img width="1440" alt="Poster with picture of a squirrel, a title of 'Mindfulness', and a motivational quote of 'When you have a dream, you've got to grab it and never let go.'" src="https://github.com/ericahagle/hang-in-there/assets/133910120/662c10db-5381-4f35-8770-91e371431bb9">
+
+<img width="1440" alt="A group of saved motivational posters" src="https://github.com/ericahagle/hang-in-there/assets/133910120/ec5d7dd0-34db-410e-99b2-795cf6055c81">
 
 
 ### Context:
